@@ -1,56 +1,139 @@
-# Password-Generator---BIT2025
 
 
-PASSWORD GENERATOR - Group Project(Aykut, Yücel, Zeljko)
+# Password Generator - BIT2025
+Group Project (Aykut, Yücel, Zeljko)
 
-This document presents the project scenario, user flow, example workflow, and data structure for the 'Password Generator' Python application. The project is part of the Programming Foundations module and demonstrates user interaction, data validation, and file processing capabilities.
+This document describes the project scenario, user flow, example workflow, and data structure of the Password Manager Application developed as part of the Programming Foundations module.
+
+The project demonstrates core Python concepts such as user interaction, data validation, and file processing through a console-based application.
+
 1. Project Scenario
-Our team project is a Password Manager Application developed in Python. The goal is to create a console-based program that allows users to securely manage their passwords by registering with an email and master password, generating strong passwords for different accounts, storing them in a file, and retrieving them when needed.
+
+Our group project is a console-based Password Manager Application written in Python.
+The goal of the application is to allow users to:
+
+Create a user account with a username and master password
+
+Log in securely
+
+Generate and store passwords for different online services
+
+Retrieve stored passwords when needed
+
+The application is designed for educational purposes and focuses on clear logic and beginner-friendly code structure.
+
+2. Assignment Requirements Fulfilled
 
 The project fulfills all three core requirements of the assignment:
-- Interactive Application: Processes user input (email, password, menu options) through the console.
-- Data Validation: Checks input formats (valid email, password length, character requirements, etc.).
-- File Processing: Stores and retrieves user and password data from a text file.
-2. User Story & Flow
-Step 1 – Registration (Sign-up)
-- The user enters an email address. The program validates it (must contain '@'). 
-- The user is asked to re-enter the email to confirm. If they don’t match, the program asks again.
-- Next, the user chooses a master password, which is entered twice to ensure accuracy.
-- The password strength is checked. It must be at least 6 characters long and contain letters, digits, and special symbols.
-- Once a strong password is chosen, the account is saved to a file (accounts.txt).
-Step 2 – Login
-- When the user returns, they must log in with their email and master password.
-- If the credentials match, they gain access to the main application.
-Step 3 – Main Menu
-After login, the main menu appears:
-1.	Add a new account – For example, create a password for a service like Instagram, Amazon, or Gmail.
-2.	View saved passwords – List all stored accounts and their passwords.
-3.	Exit – Log out of the application.
-Step 4 – Adding a New Account
-- The program generates a strong random password based on predefined criteria (length, symbols, etc.).
-- The user can accept the password, which will then be stored along with the account name and timestamp in the text file.
-Step 5 – Viewing and Selecting a Password
-- The user can view all previously saved accounts.
-- Each password is listed with a number.
-- The user selects the number of the password they want to use, and the program displays it on the screen.
-3. Example Workflow (User Scenario)
-1.	Registration:
-   - Email: ali@example.com
-   - Master password: A1i!Pass
-2.	Login:
-  - Ali enters his email and master password.
-3.	Add new account:
-  - Ali chooses to add a password for Instagram.
-  - The system suggests: Gm@7x!Qr1Z.
-  - Password is saved.
-4.	Retrieve password:
-  - Ali logs in later and selects Instagram from the list.
-  - Password Gm@7x!Qr1Z is shown for copy-paste usage.
-4. File Structure
-All data is stored in a text file 'accounts.txt' with the following structure:
 
-email|site|password|timestamp
+Interactive Application
+The program interacts with the user via the console using menus and input prompts.
+
+Data Validation
+User inputs such as passwords and usernames are validated (minimum length, required characters, etc.).
+
+File Processing
+All user and account data is stored in and retrieved from a text file (accounts.txt).
+
+3. User Flow
+Step 1 – Create New User Account
+
+The user enters their first name and last name.
+
+The program generates two available username suggestions.
+
+The user selects one of the suggested usernames or enters a custom one.
+
+The user creates a master password:
+
+Minimum 8 characters
+
+Must contain letters, digits, and special characters
+
+The user can also let the program generate a strong password automatically.
+
+The user account is saved to a file.
+
+Step 2 – Login
+
+The user logs in using their username and master password.
+
+If the credentials match the stored data, access is granted.
+
+Step 3 – Main Menu
+
+After logging in, the following options are available:
+
+Add a new account
+Store a password for a service such as Facebook, Gmail, or Instagram.
+
+View saved account passwords
+Display stored accounts and retrieve their passwords.
+
+Log out
+Exit the current user session.
+
+Step 4 – Adding a New Account
+
+The user enters the account name (e.g., Facebook, Twitter).
+
+The password for the account is entered manually.
+
+A timestamp is automatically added.
+
+The data is saved to the file.
+
+Step 5 – Viewing Saved Accounts
+
+The user sees a list of saved accounts.
+
+Each account displays its creation date.
+
+The user can select an account to view its password.
+
+4. Example Workflow
+
+Create User Account
+
+Name: Ali Yılmaz
+
+Suggested usernames: ali.yilmaz, yilmaz_ali
+
+Master password: A1i!Pass99
+
+Login
+
+Username: ali.yilmaz
+
+Password: A1i!Pass99
+
+Add New Account
+
+Account name: Instagram
+
+Password: Gm@7x!Qr1Z
+
+Retrieve Password
+
+User selects Instagram from the list
+
+Password Gm@7x!Qr1Z is displayed
+
+5. File Structure
+
+All data is stored in a text file named accounts.txt.
+
+Each line represents one saved record using the following format:
+
+username|master_password|account_name|account_password|timestamp
 
 Example:
-ali@example.com|MASTER|A1i!Pass|2025-09-26 14:10:05
-ali@example.com|Instagram|Gm@7x!Qr1Z|2025-09-26 14:15:22
+ali.yilmaz|A1i!Pass99|instagram|Gm@7x!Qr1Z|2025-09-26 14:15:22
+
+6. Notes
+
+This project is intended for learning purposes only.
+
+Passwords are stored in plain text and are not encrypted.
+
+In a real-world application, passwords would be hashed and stored securely in a database.
