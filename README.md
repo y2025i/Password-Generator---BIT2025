@@ -16,7 +16,7 @@ Create a user account with a username and master password
 
 Log in securely
 
-Generate and store passwords for different online services
+Store passwords for different online services
 
 Retrieve stored passwords when needed
 
@@ -105,7 +105,7 @@ Login
 
 Username: ali.yilmaz
 
-Password: A1i!Pass99
+Password: A1i!Pass99 (This is not generated. )
 
 Add New Account
 
