@@ -133,10 +133,10 @@ def create_account(filepath: str):
         elif pw_choice == "2":
             password = input("Enter password: ").strip()
             if password_strength(password):
-                print("Password is strong.")
+                print("Password is strong. Logging in...")
                 break
             else:
-                print("Weak password.")
+                print("Weak password. Please Type a Strong Password or use generated Password.\n A Strong Password contains at least\n - one letter\n one digit\n-one symbol")
         else:
             print("Invalid choice. \n Please press 1 to have a generated Password or 2 to write yout own password")
 
