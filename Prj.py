@@ -34,19 +34,19 @@ def username_suggester(name: str, surname: str, existing_usernames: list):
         f"{name}_{random.randint(10, 99)}"
     ]
 
-    existing_lowername = [usnam.lower() for usnam in existing_usernames]
+    existing_usernames_lower = [usnam.lower() for usnam in existing_usernames]
     random.shuffle(variants)
 
     suggestions = []
     for sug in variants:
-        if sug.lower() not in existing_lowername and sug not in suggestions:
+        if sug.lower() not in existing_usernames_lower and sug not in suggestions:
             suggestions.append(sug)
         if len(suggestions) == 2:
             break
 
     while len(suggestions) < 2:
         sug = f"{name}{random.randint(100,999)}"
-        if sug.lower() not in existing_lowername:
+        if sug.lower() not in existing_usernames_lower:
             suggestions.append(sug)
 
     return suggestions
@@ -136,14 +136,21 @@ def create_account(filepath: str):
                 print("Password is strong. Logging in...")
                 break
             else:
-                print("Weak password. Please Type a Strong Password or use generated Password.\n A Strong Password contains at least\n - one letter\n one digit\n-one symbol")
+                print(
+                    "Weak password.\n"
+                    "A strong password must contain:\n"
+                    "- at least one letter\n"
+                    "- one digit\n"
+                    "- one symbol\n"
+                )
         else:
-            print("Invalid choice. \n Please press 1 to have a generated Password or 2 to write yout own password")
+            print("Invalid choice. \n Please press 1 to have a generated Password or " \
+            "\n Press 2 to write your own password")
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     with open(filepath, "a", encoding="utf-8") as f:
-        f.write(f"{username}|MASTER|{password}|{timestamp}\n") #Username and MAster pass recorded after the first log in. 
+        f.write(f"{username}|MASTER|{password}|{timestamp}\n") #Username and Master pass recorded after the first log in. 
 
     print("\nUser created successfully.")
     print("Please log in, to save accounts.\n")
@@ -156,7 +163,12 @@ def login(filepath: str):
     password = input("Password: ").strip()
 
     if not os.path.exists(filepath):
-        print(f"username:{username} is not found. Please press 2 to create an account. or press 3 to exit. ")
+        print(
+            "User not found.\n"
+            "Please choose:\n"
+            "2 - Create New Account\n"
+            "3 - Exit"
+        )
         return
 
     with open(filepath, "r", encoding="utf-8") as accfile:
@@ -267,7 +279,7 @@ def view_accounts(username: str, filepath: str):
 
 def main_menu():
     filepath = "accounts.txt" #accfile
-    print("=== Wellcome to Account Management System! ===\n")
+    print("=== Welcome to Account Management System! ===\n")
 
     while True:
         print("Please make a choice")
@@ -293,9 +305,4 @@ def main_menu():
 # ============================================================
 
 if __name__ == "__main__":
-    try:
-        main_menu()
-    except Exception:
-        import traceback
-        traceback.print_exc()
-        input("Press Enter to close")
+    main_menu()
