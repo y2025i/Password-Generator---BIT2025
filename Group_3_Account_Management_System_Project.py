@@ -8,7 +8,7 @@ import unicodedata
 # ============================================================
 # Helper Functions
 # ============================================================
-
+#Aykut
 def unicoder(text: str) -> str:
     """Removes accents and special characters.
     """
@@ -77,12 +77,12 @@ def check_username_exists(username: str, filepath: str) -> bool:
             if line.split("|")[0].lower() == username.lower():
                 return True
     return False
-
+#Aykut
 
 # ============================================================
 # Core Functions
 # ============================================================
-
+#Zeljko
 def create_account(filepath: str):
     """Creates a new user (MASTER only)."""
 
@@ -154,8 +154,8 @@ def create_account(filepath: str):
 
     print("\nUser created successfully.")
     print("Please log in, to save accounts.\n")
-
-
+#Zeljko 
+#Yücel
 def login(filepath: str):
     """User login."""
 
@@ -189,8 +189,8 @@ def login(filepath: str):
                     return
 
     print("User not found. Try again.")
-
-
+#Yücel
+#Aykut
 def add_account(username: str, filepath: str):
     """Adds a new service account."""
 
@@ -271,7 +271,8 @@ def view_accounts(username: str, filepath: str):
         else:
             print("Invalid selection.")
 
-
+#Aykut
+#Yücel
 
 # ============================================================
 # Main Menu
@@ -306,3 +307,4 @@ def main_menu():
 
 if __name__ == "__main__":
     main_menu()
+# Yücel
