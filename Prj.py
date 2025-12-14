@@ -190,20 +190,7 @@ def add_account(username: str, filepath: str):
         accfile.write(f"{username}|{account_name}|{account_password}|{timestamp}\n")
 
     print(f"Account '{account_name}' added.")
-"""    print("\nYour saved accounts are:")
-    i = 1
 
-    accounts = []
-
-    with open(filepath, "r", encoding="utf-8") as accfile:
-        for line in accfile:
-            parts = line.strip().split("|")
-            if parts[0] == username and parts[1] != "MASTER":
-                accounts.append(parts)
-    for acc in accounts:
-        print(f"{i}. {acc[1].title()}")
-        i += 1
-"""
 def view_accounts(username: str, filepath: str):
     """Shows user accounts, allows viewing, adding new ones, or exiting."""
 
